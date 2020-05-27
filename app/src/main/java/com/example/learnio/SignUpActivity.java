@@ -47,7 +47,12 @@ public class SignUpActivity extends AppCompatActivity {
 
     //id are set here
     public void init() {
+        mSignUpWithGoogleBtn = findViewById(R.id.btn_sign_up_google);
+        mSignUpBtn = findViewById(R.id.btn_sign_up);
 
+        etUserEmail = findViewById(R.id.etEmail);
+        etUserName = findViewById(R.id.etUsername);
+        etUserPassword = findViewById(R.id.etPassword);
     }
 
     private void initGoogleClient() {
@@ -130,7 +135,7 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RC_SIGN_UP) {
+        if (requestCode == RC_SIGN_UP) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);

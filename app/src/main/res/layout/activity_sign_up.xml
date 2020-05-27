@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/learnio" />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/etEmail"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="40dp"
@@ -31,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/etUsername" />
 
     <TextView
         android:id="@+id/etusername"
@@ -41,11 +41,11 @@
         android:text="Username"
         android:textSize="14sp"
         android:textColor="#6B6B6B"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintStart_toStartOf="@+id/editText" />
+        app:layout_constraintBottom_toTopOf="@+id/etUsername"
+        app:layout_constraintStart_toStartOf="@+id/etUsername" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/etUsername"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="40dp"
@@ -68,8 +68,8 @@
         android:text="Email Address"
         android:textSize="14sp"
         android:textColor="#6B6B6B"
-        app:layout_constraintBottom_toTopOf="@+id/username"
-        app:layout_constraintStart_toStartOf="@+id/username" />
+        app:layout_constraintBottom_toTopOf="@+id/etEmail"
+        app:layout_constraintStart_toStartOf="@+id/etEmail" />
 
 
     <TextView
@@ -80,12 +80,12 @@
         android:text="Password"
         android:textSize="14sp"
         android:textColor="#6B6B6B"
-        app:layout_constraintBottom_toTopOf="@+id/password"
-        app:layout_constraintStart_toStartOf="@+id/password" />
+        app:layout_constraintBottom_toTopOf="@+id/etPassword"
+        app:layout_constraintStart_toStartOf="@+id/etPassword" />
 
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/etPassword"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="40dp"
@@ -98,10 +98,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_sign_up"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -112,7 +112,7 @@
         android:text="Sign up"
         android:textColor="#fff"
         android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword"
         tools:layout_editor_absoluteX="-29dp" />
 
 
@@ -124,13 +124,13 @@
         android:text="OR"
         android:textColor="#6B6B6B"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="@+id/btn_sign_up"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintStart_toStartOf="@+id/btn_sign_up"
+        app:layout_constraintTop_toBottomOf="@+id/btn_sign_up" />
 
     <Button
-        android:id="@+id/google"
+        android:id="@+id/btn_sign_up_google"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -141,8 +141,8 @@
         android:text="Sign up with Google"
         android:textColor="#000"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="@+id/btn_sign_up"
+        app:layout_constraintStart_toStartOf="@+id/btn_sign_up"
         app:layout_constraintTop_toBottomOf="@+id/or" />
 
     <TextView
@@ -154,10 +154,10 @@
         android:textColor="#6B6B6B"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/google"
+        app:layout_constraintEnd_toEndOf="@+id/btn_sign_up_google"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="@+id/google"
-        app:layout_constraintTop_toBottomOf="@+id/google"
+        app:layout_constraintStart_toStartOf="@+id/btn_sign_up_google"
+        app:layout_constraintTop_toBottomOf="@+id/btn_sign_up_google"
         app:layout_constraintVertical_bias="0.0" />
 
 
