@@ -22,6 +22,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent activity = new Intent(SplashScreenActivity.this, WelcomeActivity.class);
+                startActivity(activity);
             }
         }, delay_time);
     }
