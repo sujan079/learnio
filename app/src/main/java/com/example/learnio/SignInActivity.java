@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -38,11 +39,33 @@ public class SignInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+        init();
+        initGoogleClient();
+        mAuth = FirebaseAuth.getInstance();
     }
 
     //id are set here
     public void init() {
+        mSignInWithGoogleBtn = findViewById(R.id.btn_sign_in_google);
+        mSignInBtn = findViewById(R.id.btn_sign_in);
 
+        etUserEmail = findViewById(R.id.etEmail);
+        etUserPassword = findViewById(R.id.etPassword);
+
+        mSignInBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String password = etUserPassword.getText().toString();
+                String email = etUserEmail.getText().toString();
+                signInWithEmailAndPassword(email, password);
+            }
+        });
+        mSignInWithGoogleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signInWithGoogle();
+            }
+        });
     }
 
     private void initGoogleClient() {
@@ -54,23 +77,6 @@ public class SignInActivity extends AppCompatActivity {
 
     }
 
-    private void initButtons() {
-        mSignInBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String password = etUserPassword.getText().toString();
-                String email = etUserEmail.getText().toString();
-
-                signInWithEmailAndPassword(email, password);
-            }
-        });
-        mSignInWithGoogleBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signInWithGoogle();
-            }
-        });
-    }
 
 
     public void signInWithEmailAndPassword(String email, String password) {
@@ -115,11 +121,12 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void displayErrorMsg() {
+        Toast.makeText(this, "Not Success", Toast.LENGTH_SHORT).show();
 
     }
 
     private void updateUI() {
-
+        Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show();
     }
 
     @Override

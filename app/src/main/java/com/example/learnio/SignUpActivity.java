@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -125,11 +126,12 @@ public class SignUpActivity extends AppCompatActivity {
 
 
     private void displayErrorMsg() {
+        Toast.makeText(this, "Not Success", Toast.LENGTH_SHORT).show();
 
     }
 
     private void updateUI() {
-
+        Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show();
     }
 
     @Override

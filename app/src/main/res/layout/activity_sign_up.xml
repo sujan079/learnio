@@ -120,12 +120,11 @@
         android:id="@+id/or"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:text="OR"
         android:textColor="#6B6B6B"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/btn_sign_up"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/btn_sign_up"
         app:layout_constraintTop_toBottomOf="@+id/btn_sign_up" />
 
@@ -135,30 +134,28 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/s_btn"
         android:text="Sign up with Google"
         android:textColor="#000"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/btn_sign_up"
-        app:layout_constraintStart_toStartOf="@+id/btn_sign_up"
+        app:layout_constraintEnd_toEndOf="@+id/btn_sign_in"
+        app:layout_constraintStart_toStartOf="@+id/btn_sign_in"
         app:layout_constraintTop_toBottomOf="@+id/or" />
 
     <TextView
         android:id="@+id/disc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:text="By taping 'Sign up' and using the learnio "
         android:textColor="#6B6B6B"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn_sign_up_google"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="@+id/btn_sign_up_google"
-        app:layout_constraintTop_toBottomOf="@+id/btn_sign_up_google"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_sign_up_google" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
