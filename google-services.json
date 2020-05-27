@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "965572267898",
+    "firebase_url": "https://learnio-62905.firebaseio.com",
+    "project_id": "learnio-62905",
+    "storage_bucket": "learnio-62905.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:965572267898:android:19f76d6234d4f39b9010c3",
+        "android_client_info": {
+          "package_name": "com.example.learnio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "965572267898-5ipo4is292vpm2b7s09eo650b5nuerpm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpphVuvs2NLtWV4dN_S31oPX6UcTXwi_g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "965572267898-5ipo4is292vpm2b7s09eo650b5nuerpm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
