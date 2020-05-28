@@ -18,12 +18,60 @@
         app:srcCompat="@drawable/learnio" />
 
 
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="sans-serif-medium"
+
+        android:text="Welcome Back !"
+        android:textColor="#000"
+        android:textSize="20sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/welcome2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif-thin"
+        android:text="Don’t have an account ?"
+        android:textColor="#6B6B6B"
+
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/welcome2"
+        app:layout_constraintEnd_toStartOf="@+id/welcome2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/welcome3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+
+        android:fontFamily="sans-serif-thin"
+        android:text="create it!"
+        android:textColor="#5A31F3"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/welcome2"
+        app:layout_constraintStart_toEndOf="@+id/welcome2"
+        app:layout_constraintTop_toTopOf="@+id/welcome2"
+        app:layout_constraintVertical_bias="0.0" />
+
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/round_edit_text"
         android:ems="10"
@@ -32,8 +80,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
+        app:layout_constraintTop_toBottomOf="@+id/welcome2" />
 
     <TextView
         android:id="@+id/textView"
@@ -41,11 +88,12 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="14dp"
         android:text="Email Address"
+        android:fontFamily="sans-serif-medium"
         android:textColor="#6B6B6B"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/etEmail"
         app:layout_constraintStart_toStartOf="@+id/etEmail"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/welcome2"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
@@ -54,6 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="14dp"
         android:text="Password"
+        android:fontFamily="sans-serif-medium"
         android:textSize="14sp"
         android:textColor="#6B6B6B"
         app:layout_constraintBottom_toTopOf="@+id/etPassword"
@@ -65,7 +114,7 @@
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/round_edit_text"
         android:ems="10"
@@ -76,19 +125,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
-
     <Button
         android:id="@+id/btn_sign_in"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="40dp"
         android:background="@drawable/p_btn"
         android:text="Sign in"
         android:textColor="#fff"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintEnd_toEndOf="@+id/etPassword"
+        app:layout_constraintStart_toStartOf="@+id/etPassword"
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
     <TextView
@@ -97,26 +148,37 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="OR"
+        android:fontFamily="sans-serif-medium"
         android:textColor="#6B6B6B"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_sign_in"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/btn_sign_in"
         app:layout_constraintTop_toBottomOf="@+id/btn_sign_in" />
 
     <Button
         android:id="@+id/btn_sign_in_google"
+        android:textAllCaps="false"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
         android:background="@drawable/s_btn"
         android:text="Sign in with Google"
+        android:drawableLeft="@drawable/drawable_left"
         android:textColor="#000"
         android:textSize="14sp"
+        android:textAlignment="center"
+        android:drawablePadding="-60dp"
+        android:paddingLeft="70dp"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn_sign_in"
         app:layout_constraintStart_toStartOf="@+id/btn_sign_in"
-        app:layout_constraintTop_toBottomOf="@+id/or" />
+        app:layout_constraintTop_toBottomOf="@+id/or"
+        app:layout_constraintVertical_bias="0.052" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

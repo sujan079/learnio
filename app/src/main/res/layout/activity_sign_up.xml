@@ -37,10 +37,11 @@
         android:id="@+id/etusername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="sans-serif-medium"
         android:text="Username"
-        android:textSize="14sp"
         android:textColor="#6B6B6B"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/etUsername"
         app:layout_constraintStart_toStartOf="@+id/etUsername" />
 
@@ -64,8 +65,9 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="12dp"
         android:text="Email Address"
+        android:fontFamily="sans-serif-medium"
         android:textSize="14sp"
         android:textColor="#6B6B6B"
         app:layout_constraintBottom_toTopOf="@+id/etEmail"
@@ -78,6 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="14dp"
         android:text="Password"
+        android:fontFamily="sans-serif-medium"
         android:textSize="14sp"
         android:textColor="#6B6B6B"
         app:layout_constraintBottom_toTopOf="@+id/etPassword"
@@ -108,6 +111,7 @@
         android:layout_marginEnd="40dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-medium"
         android:background="@drawable/p_btn"
         android:text="Sign up"
         android:textColor="#fff"
@@ -123,6 +127,7 @@
         android:layout_marginTop="16dp"
         android:text="OR"
         android:textColor="#6B6B6B"
+        android:fontFamily="sans-serif-medium"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/btn_sign_up"
         app:layout_constraintStart_toStartOf="@+id/btn_sign_up"
@@ -130,6 +135,7 @@
 
     <Button
         android:id="@+id/btn_sign_up_google"
+        android:textAllCaps="false"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -138,24 +144,35 @@
         android:layout_marginEnd="40dp"
         android:background="@drawable/s_btn"
         android:text="Sign up with Google"
+        android:drawableLeft="@drawable/drawable_left"
         android:textColor="#000"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/btn_sign_in"
-        app:layout_constraintStart_toStartOf="@+id/btn_sign_in"
+        android:textAlignment="center"
+        android:drawablePadding="-60dp"
+        android:paddingLeft="70dp"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintEnd_toEndOf="@+id/btn_sign_up"
+        app:layout_constraintStart_toStartOf="@+id/btn_sign_up"
         app:layout_constraintTop_toBottomOf="@+id/or" />
 
     <TextView
         android:id="@+id/disc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="By taping 'Sign up' and using the learnio "
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="sans-serif-thin"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp"
+        android:text="By tapping ‘Sign up’ and using the learnio app,you’re agreeing to our terms of service and privacy policy"
+        android:textAlignment="center"
         android:textColor="#6B6B6B"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn_sign_up_google"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="@+id/btn_sign_up_google"
-        app:layout_constraintTop_toBottomOf="@+id/btn_sign_up_google" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_sign_up_google"
+        app:layout_constraintVertical_bias="0.454" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
