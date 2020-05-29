@@ -19,6 +19,10 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     private ArrayList<Category> categories;
 
 
+    public CategoryAdapter() {
+        this.categories = new ArrayList<>();
+    }
+
     public void setCategories(ArrayList<Category> categories) {
         this.categories = categories;
     }
