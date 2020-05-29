@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,6 +33,7 @@ public class SignInActivity extends AppCompatActivity {
 
     private EditText etUserEmail, etUserPassword;
     private Button mSignInBtn, mSignInWithGoogleBtn;
+    private TextView tvErrorMsg;
 
 
 
@@ -47,6 +48,7 @@ public class SignInActivity extends AppCompatActivity {
 
     //id are set here
     public void init() {
+        tvErrorMsg = findViewById(R.id.tv_error_msg);
         mSignInWithGoogleBtn = findViewById(R.id.btn_sign_in_google);
         mSignInBtn = findViewById(R.id.btn_sign_in);
 
@@ -134,12 +136,16 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void displayErrorMsg(String error) {
-        Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
+
+        tvErrorMsg.setVisibility(View.VISIBLE);
+        tvErrorMsg.setText(error);
 
     }
 
     private void updateUI() {
-        Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show();
+
+        Intent activityIntent = new Intent(SignInActivity.this, MainActivity.class);
+        startActivity(activityIntent);
     }
 
     @Override

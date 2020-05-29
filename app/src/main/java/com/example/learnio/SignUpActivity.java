@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,6 +35,9 @@ public class SignUpActivity extends AppCompatActivity {
     private Button mSignUpBtn, mSignUpWithGoogleBtn;
     private EditText etUserName, etUserPassword, etUserEmail;
 
+    private TextView tvErrorMsg;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +52,9 @@ public class SignUpActivity extends AppCompatActivity {
 
     //id are set here
     public void init() {
+
+        tvErrorMsg = findViewById(R.id.tv_error_msg);
+
         mSignUpWithGoogleBtn = findViewById(R.id.btn_sign_up_google);
         mSignUpBtn = findViewById(R.id.btn_sign_up);
 
@@ -118,6 +124,7 @@ public class SignUpActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI();
                         } else {
+
                             displayErrorMsg(task.getException().getMessage());
                         }
                     }
@@ -125,6 +132,7 @@ public class SignUpActivity extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+
                         displayErrorMsg(e.getMessage());
                     }
                 });
@@ -132,14 +140,17 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
 
-    private void displayErrorMsg(String err) {
-        Toast.makeText(this, err, Toast.LENGTH_SHORT).show();
-
+    private void displayErrorMsg(String error) {
+        tvErrorMsg.setVisibility(View.VISIBLE);
+        tvErrorMsg.setText(error);
     }
 
     private void updateUI() {
-        Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show();
+
+        Intent activityIntent = new Intent(SignUpActivity.this, MainActivity.class);
+        startActivity(activityIntent);
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

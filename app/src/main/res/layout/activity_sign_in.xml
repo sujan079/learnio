@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="sans-serif-medium"
 
         android:text="Welcome Back !"
@@ -71,7 +71,7 @@
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/round_edit_text"
         android:ems="10"
@@ -80,21 +80,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome2" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_error_msg" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="14dp"
-        android:text="Email Address"
         android:fontFamily="sans-serif-medium"
+        android:text="Email Address"
         android:textColor="#6B6B6B"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/etEmail"
-        app:layout_constraintStart_toStartOf="@+id/etEmail"
-        app:layout_constraintTop_toBottomOf="@+id/welcome2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="@+id/etEmail" />
 
     <TextView
         android:id="@+id/pass"
@@ -179,6 +177,18 @@
         app:layout_constraintStart_toStartOf="@+id/btn_sign_in"
         app:layout_constraintTop_toBottomOf="@+id/or"
         app:layout_constraintVertical_bias="0.052" />
+
+    <TextView
+        android:id="@+id/tv_error_msg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textColor="@android:color/holo_red_light"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/welcome2"
+        app:layout_constraintTop_toBottomOf="@+id/welcome2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
