@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#fff"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
@@ -31,7 +32,7 @@
         android:text="Let’s learn"
         android:textColor="#000"
 
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,7 +46,7 @@
         android:text="something new"
         android:textColor="#000"
 
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome1" />
 
@@ -54,10 +55,28 @@
         android:layout_height="60dp"
         android:layout_marginEnd="20dp"
         app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="#000"
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/welcome2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/welcome1" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginRight="20dp"
+        android:hint="What topic are you searching for"
+        android:background="@drawable/round_edit_text"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:fontFamily="sans-serif-thin"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
