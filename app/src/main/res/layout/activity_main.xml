@@ -97,38 +97,14 @@
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="20dp"
-        app:cardBackgroundColor="#F8F8F8"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="0dp"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/welcome3" />
-
-    <TextView
-        android:id="@+id/pass"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Coding"
-        android:textColor="#000"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/cardView"
-        app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView"
-        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/cardView"
-        app:srcCompat="@drawable/laptop" />
+        app:layout_constraintTop_toBottomOf="@+id/welcome3"
+        tools:itemCount="1"
+        tools:listitem="@layout/category_item" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
