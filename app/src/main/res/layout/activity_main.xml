@@ -61,25 +61,74 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/welcome1" />
 
+
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="28dp"
         android:layout_marginRight="20dp"
-        android:hint="What topic are you searching for"
         android:background="@drawable/round_edit_text"
-        android:ems="10"
         android:drawableLeft="@drawable/searchd"
         android:drawablePadding="20dp"
-        android:inputType="textPassword"
+        android:ems="10"
         android:fontFamily="sans-serif-thin"
-        android:textSize="18sp"
+        android:hint="What topic are you searching for"
+        android:inputType="textPassword"
         android:paddingLeft="20dp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome2" />
 
 
+    <TextView
+        android:id="@+id/welcome3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Popular Categories"
+        android:textColor="#000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="32dp"
+        app:cardBackgroundColor="#F8F8F8"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/welcome3" />
+
+    <TextView
+        android:id="@+id/pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Coding"
+        android:textColor="#000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/cardView"
+        app:srcCompat="@drawable/laptop" />
 </androidx.constraintlayout.widget.ConstraintLayout>
