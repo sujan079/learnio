@@ -17,6 +17,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
@@ -70,7 +71,7 @@ public class SignInActivity extends AppCompatActivity {
 
     private void initGoogleClient() {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("965572267898-5ipo4is292vpm2b7s09eo650b5nuerpm.apps.googleusercontent.com")
+                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
@@ -89,12 +90,18 @@ public class SignInActivity extends AppCompatActivity {
                             updateUI();
                         } else {
 
-                            displayErrorMsg();
-                            updateUI();
+                            displayErrorMsg(task.getException().getMessage());
                         }
 
                     }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        displayErrorMsg(e.getMessage());
+                    }
                 });
+        ;
 
     }
 
@@ -113,15 +120,21 @@ public class SignInActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI();
                         } else {
-                            displayErrorMsg();
-                            updateUI();
+                            displayErrorMsg(task.getException().getMessage());
                         }
                     }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        displayErrorMsg(e.getMessage());
+                    }
                 });
+
     }
 
-    private void displayErrorMsg() {
-        Toast.makeText(this, "Not Success", Toast.LENGTH_SHORT).show();
+    private void displayErrorMsg(String error) {
+        Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
 
     }
 
