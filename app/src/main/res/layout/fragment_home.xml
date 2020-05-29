@@ -55,11 +55,17 @@
         android:layout_height="60dp"
         android:layout_marginEnd="20dp"
         app:cardCornerRadius="8dp"
-        app:cardBackgroundColor="#000"
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/welcome2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/welcome1" />
+        app:layout_constraintTop_toTopOf="@+id/welcome1" >
+
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/dummy" />
+    </androidx.cardview.widget.CardView>
 
 
     <EditText
