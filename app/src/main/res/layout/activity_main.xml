@@ -71,6 +71,7 @@
         android:hint="What topic are you searching for"
         android:background="@drawable/round_edit_text"
         android:ems="10"
+        android:drawableLeft="@drawable/drawable_left"
         android:inputType="textPassword"
         android:fontFamily="sans-serif-thin"
         android:textSize="18sp"
