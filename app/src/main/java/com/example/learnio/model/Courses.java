@@ -88,7 +88,16 @@ public class Courses {
         return new ArrayList<Courses>() {{
             add(new Courses("Introduction to Computer Science",
                     "4 hrs",
-                    R.drawable.blue
+                    R.drawable.blue,
+                    18,
+                    4.8,
+                    new ArrayList<CourseContent>(){{
+                        add(new CourseContent("Welcome to the Course","3.35min"));
+                        add(new CourseContent("Introduction to Android","5.35min"));
+                        add(new CourseContent("Recycle View","60min"));
+                        add(new CourseContent("Networking","120min"));
+                        add(new CourseContent("UI","120min"));
+                    }}
             ));
             add(new Courses("Introduction to Graphic Design", "2 hrs", R.drawable.pink));
             add(new Courses("Game Development", "5 hr", R.drawable.green));
