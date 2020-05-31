@@ -18,9 +18,7 @@ import com.example.learnio.adapter.CategoryAdapter;
 import com.example.learnio.model.Category;
 import com.google.firebase.auth.FirebaseAuth;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class HomeFragment extends Fragment {
     private RecyclerView rvCategory;
     private CategoryAdapter categoryAdapter;

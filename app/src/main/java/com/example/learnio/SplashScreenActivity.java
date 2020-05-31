@@ -32,6 +32,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             public void run() {
                 Intent activity = new Intent(SplashScreenActivity.this, desitnation);
                 startActivity(activity);
+                finish();
             }
         }, delay_time);
     }

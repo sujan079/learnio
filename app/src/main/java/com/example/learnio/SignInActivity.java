@@ -146,6 +146,7 @@ public class SignInActivity extends AppCompatActivity {
 
         Intent activityIntent = new Intent(SignInActivity.this, MainActivity.class);
         startActivity(activityIntent);
+        finish();
     }
 
     @Override

@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -80,8 +81,10 @@ public class SignUpActivity extends AppCompatActivity {
                 String username = etUserName.getText().toString();
                 String password = etUserPassword.getText().toString();
                 String email = etUserEmail.getText().toString();
-
-                signUpWithEmailAndPassword(email, password);
+                if (email.equals("") || password.equals(""))
+                    Toast.makeText(getApplicationContext(), "Fill Information", Toast.LENGTH_SHORT).show();
+                else
+                    signUpWithEmailAndPassword(email, password);
             }
         });
         mSignUpWithGoogleBtn.setOnClickListener(new View.OnClickListener() {
@@ -149,6 +152,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         Intent activityIntent = new Intent(SignUpActivity.this, MainActivity.class);
         startActivity(activityIntent);
+        finish();
     }
 
 
