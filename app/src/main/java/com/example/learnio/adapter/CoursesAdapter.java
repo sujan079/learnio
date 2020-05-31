@@ -11,6 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.learnio.R;
+import com.example.learnio.actions.CoursesActionListner;
 import com.example.learnio.model.Courses;
 
 import java.util.ArrayList;
@@ -19,11 +20,13 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.CourseVi
 
     private ArrayList<Courses> courses;
     private Context context;
+    private CoursesActionListner coursesActionListner;
 
 
-    public CoursesAdapter(Context context) {
+    public CoursesAdapter(Context context, CoursesActionListner coursesActionListner) {
         this.context = context;
         courses = new ArrayList<>();
+        this.coursesActionListner = coursesActionListner;
     }
 
     public void setCourses(ArrayList<Courses> courses) {
@@ -47,7 +50,7 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.CourseVi
         return courses.size();
     }
 
-    class CourseViewHolder extends RecyclerView.ViewHolder {
+    class CourseViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView mTvCourseTitle;
         private TextView mTvCourseLength;
@@ -59,6 +62,7 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.CourseVi
             mTvCourseTitle = itemView.findViewById(R.id.tv_course_name);
             mTvCourseLength = itemView.findViewById(R.id.tv_course_time);
             background = itemView.findViewById(R.id.course_container);
+            background.setOnClickListener(this);
 
         }
 
@@ -67,6 +71,11 @@ public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.CourseVi
             mTvCourseLength.setText(courses.getLength());
             background.setBackground(context.getDrawable(courses.getBackground()));
 
+        }
+
+        @Override
+        public void onClick(View v) {
+            coursesActionListner.onCourseItemClick(courses.get(getAdapterPosition()));
         }
     }
 }

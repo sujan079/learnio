@@ -10,6 +10,7 @@ public class Courses {
     private int background;
     private int users;
     private double rating;
+    private String category;
 
     private ArrayList<CourseContent> courseContents;
 
@@ -21,18 +22,21 @@ public class Courses {
 
     }
 
-    public Courses(String courseName, String length, int background) {
+    public Courses(String courseName, String length, int background, String category) {
         this.courseName = courseName;
         this.length = length;
         this.background = background;
+        this.courseContents = new ArrayList<>();
+        this.category = category;
     }
 
-    public Courses(String courseName, String length, int background, int users, double rating, ArrayList<CourseContent> courseContents) {
+    public Courses(String courseName, String length, int background, int users, double rating, String category, ArrayList<CourseContent> courseContents) {
         this.courseName = courseName;
         this.length = length;
         this.background = background;
         this.users = users;
         this.rating = rating;
+        this.category = category;
         this.courseContents = courseContents;
     }
 
@@ -58,6 +62,14 @@ public class Courses {
 
     public void setCourseContents(ArrayList<CourseContent> courseContents) {
         this.courseContents = courseContents;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getCourseName() {
@@ -91,6 +103,7 @@ public class Courses {
                     R.drawable.blue,
                     18,
                     4.8,
+                    "Coding",
                     new ArrayList<CourseContent>(){{
                         add(new CourseContent("Welcome to the Course","3.35min"));
                         add(new CourseContent("Introduction to Android","5.35min"));
@@ -99,9 +112,9 @@ public class Courses {
                         add(new CourseContent("UI","120min"));
                     }}
             ));
-            add(new Courses("Introduction to Graphic Design", "2 hrs", R.drawable.pink));
-            add(new Courses("Game Development", "5 hr", R.drawable.green));
-            add(new Courses("Hello", "6 hrs", R.drawable.black));
+            add(new Courses("Introduction to Graphic Design", "2 hrs", R.drawable.pink, "Coding"));
+            add(new Courses("Game Development", "5 hr", R.drawable.green, "Photography"));
+            add(new Courses("Hello", "6 hrs", R.drawable.black, "Coding"));
         }};
     }
 }
