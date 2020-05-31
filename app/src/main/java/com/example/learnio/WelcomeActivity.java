@@ -40,10 +40,12 @@ public class WelcomeActivity extends AppCompatActivity {
     public void onSignIn() {
         Intent signInIntent = new Intent(WelcomeActivity.this, SignInActivity.class);
         startActivity(signInIntent);
+        finish();
     }
 
     public void onSignUp() {
         Intent signUpIntent = new Intent(WelcomeActivity.this, SignUpActivity.class);
         startActivity(signUpIntent);
+        finish();
     }
 }

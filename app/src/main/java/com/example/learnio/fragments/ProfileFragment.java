@@ -58,6 +58,7 @@ public class ProfileFragment extends Fragment {
                 firebaseAuth.signOut();
                 Intent intent = new Intent(getActivity(), SplashScreenActivity.class);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
     }
