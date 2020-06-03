@@ -64,7 +64,7 @@ public class HomeFragment extends Fragment implements CoursesActionListner, Cate
 
     public void initCategory() {
         rvCategory = getView().findViewById(R.id.rv_category);
-        categoryAdapter = new CategoryAdapter();
+        categoryAdapter = new CategoryAdapter(this);
         categoryLayoutManger = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
 
         categoryAdapter.setCategories(Category.getCategories());
@@ -112,7 +112,7 @@ public class HomeFragment extends Fragment implements CoursesActionListner, Cate
     public void onCategoryItemClicked(String category) {
         getActivity().getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.host_fragment, new CategoryCoursesFragment())
+                .replace(R.id.host_fragment, new CategoryCoursesFragment(category))
                 .addToBackStack("")
                 .commit();
     }

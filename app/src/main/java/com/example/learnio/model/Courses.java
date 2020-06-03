@@ -4,6 +4,7 @@ import com.example.learnio.R;
 
 import java.util.ArrayList;
 
+
 public class Courses {
     private String courseName;
     private String length;
@@ -11,6 +12,15 @@ public class Courses {
     private int users;
     private double rating;
     private String category;
+    private int course_logo;
+
+    public int getCourse_logo() {
+        return course_logo;
+    }
+
+    public void setCourse_logo(int course_logo) {
+        this.course_logo = course_logo;
+    }
 
     private ArrayList<CourseContent> courseContents;
 
@@ -22,15 +32,16 @@ public class Courses {
 
     }
 
-    public Courses(String courseName, String length, int background, String category) {
+    public Courses(String courseName, String length, int background, String category,int course_logo) {
         this.courseName = courseName;
         this.length = length;
         this.background = background;
         this.courseContents = new ArrayList<>();
         this.category = category;
+        this.course_logo=course_logo;
     }
 
-    public Courses(String courseName, String length, int background, int users, double rating, String category, ArrayList<CourseContent> courseContents) {
+    public Courses(String courseName, String length, int background, int users, double rating, String category, ArrayList<CourseContent> courseContents,int course_logo) {
         this.courseName = courseName;
         this.length = length;
         this.background = background;
@@ -38,6 +49,7 @@ public class Courses {
         this.rating = rating;
         this.category = category;
         this.courseContents = courseContents;
+        this.course_logo=course_logo;
     }
 
     public int getUsers() {
@@ -111,10 +123,10 @@ public class Courses {
                         add(new CourseContent("Networking","120min"));
                         add(new CourseContent("UI","120min"));
                     }}
-            ));
-            add(new Courses("Introduction to Graphic Design", "2 hrs", R.drawable.pink, "Coding"));
-            add(new Courses("Game Development", "5 hr", R.drawable.green, "Photography"));
-            add(new Courses("Hello", "6 hrs", R.drawable.black, "Coding"));
+                    ,R.drawable.android));
+            add(new Courses("Introduction to Graphic Design", "2 hrs", R.drawable.pink, "Coding",R.drawable.angularjs));
+            add(new Courses("Game Development", "5 hr", R.drawable.green, "Photography",R.drawable.android));
+            add(new Courses("Hello", "6 hrs", R.drawable.black, "Coding",R.drawable.angularjs));
         }};
     }
 }

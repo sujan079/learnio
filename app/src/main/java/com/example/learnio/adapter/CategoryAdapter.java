@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.learnio.R;
+import com.example.learnio.actions.CategoryActionListner;
 import com.example.learnio.model.Category;
 
 import java.util.ArrayList;
@@ -17,10 +18,12 @@ import java.util.ArrayList;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
 
     private ArrayList<Category> categories;
+    private CategoryActionListner categoryActionListner;
 
 
-    public CategoryAdapter() {
+    public CategoryAdapter(CategoryActionListner actionListner) {
         this.categories = new ArrayList<>();
+        this.categoryActionListner = actionListner;
     }
 
     public void setCategories(ArrayList<Category> categories) {
@@ -45,7 +48,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         return categories.size();
     }
 
-    class CategoryViewHolder extends RecyclerView.ViewHolder {
+    class CategoryViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView mCategoryName;
         private ImageView mCategoryImage;
@@ -55,11 +58,18 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
             mCategoryName = itemView.findViewById(R.id.tv_category_name);
             mCategoryImage = itemView.findViewById(R.id.iv_category_img);
+
+            itemView.setOnClickListener(this);
         }
 
         public void bindData(Category category) {
             mCategoryName.setText(category.getCategoryName());
             mCategoryImage.setImageResource(category.getImageRes());
+        }
+
+        @Override
+        public void onClick(View v) {
+            categoryActionListner.onCategoryItemClicked(categories.get(getAdapterPosition()).getCategoryName());
         }
     }
 }
