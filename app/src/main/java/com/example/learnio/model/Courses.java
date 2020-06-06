@@ -14,6 +14,10 @@ public class Courses {
     private String category;
     private int course_logo;
 
+    private String course_url;
+
+
+
     public int getCourse_logo() {
         return course_logo;
     }
@@ -32,7 +36,23 @@ public class Courses {
 
     }
 
-    public Courses(String courseName, String length, int background, String category,int course_logo) {
+    public String getCourse_url() {
+        return course_url;
+    }
+
+    public void setCourse_url(String course_url) {
+        this.course_url = course_url;
+    }
+
+    public Courses(String courseName, String length, int background, String category, String course_url) {
+        this.courseName = courseName;
+        this.length = length;
+        this.background = background;
+        this.category = category;
+        this.course_url = course_url;
+    }
+
+    public Courses(String courseName, String length, int background, String category, int course_logo) {
         this.courseName = courseName;
         this.length = length;
         this.background = background;
@@ -40,6 +60,7 @@ public class Courses {
         this.category = category;
         this.course_logo=course_logo;
     }
+
 
     public Courses(String courseName, String length, int background, int users, double rating, String category, ArrayList<CourseContent> courseContents,int course_logo) {
         this.courseName = courseName;
@@ -126,7 +147,9 @@ public class Courses {
                     ,R.drawable.android));
             add(new Courses("Introduction to Graphic Design", "2 hrs", R.drawable.pink, "Coding",R.drawable.angularjs));
             add(new Courses("Game Development", "5 hr", R.drawable.green, "Photography",R.drawable.android));
-            add(new Courses("Hello", "6 hrs", R.drawable.black, "Coding",R.drawable.angularjs));
+            add(new Courses("Database", "12 hrs", R.drawable.black, "Coding",R.drawable.angularjs));
+            add(new Courses("Database", "12 hrs", R.drawable.black, "Coding","https://banner2.kisspng.com/20180717/jsr/kisspng-computer-icons-oracle-database-clip-art-db-logo-5b4d9ea94e9296.6349990715318135453218.jpg"));
+
         }};
     }
 }

@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.learnio.R;
 import com.example.learnio.model.Courses;
 
@@ -56,9 +57,26 @@ public class CategoryCoursesAdapter extends RecyclerView.Adapter<CategoryCourses
         }
 
         public void bindData(Courses courses){
-            ivCourseImage.setImageResource(courses.getCourse_logo());
+
+            setIvCourseImage(courses.getCourse_url(),courses.getCourse_logo());
             tvCourseTitle.setText(courses.getCourseName());
             tvCourseDuration.setText(courses.getLength());
+        }
+
+        public void setIvCourseImage(String url) {
+            Glide
+                    .with(ivCourseImage)
+                    .load(url)
+                    .placeholder(R.drawable.dummy)
+                    .into(ivCourseImage);
+        }
+
+        public void setIvCourseImage(String url,int drawable) {
+            Glide
+                    .with(ivCourseImage)
+                    .load(url)
+                    .placeholder(drawable)
+                    .into(ivCourseImage);
         }
 
 

@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.learnio.R;
 import com.example.learnio.actions.CategoryActionListner;
 import com.example.learnio.model.Category;
@@ -64,12 +65,22 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
         public void bindData(Category category) {
             mCategoryName.setText(category.getCategoryName());
-            mCategoryImage.setImageResource(category.getImageRes());
+
+            setIvCourseImage(category.getImageUrl(), category.getImageRes());
         }
 
         @Override
         public void onClick(View v) {
             categoryActionListner.onCategoryItemClicked(categories.get(getAdapterPosition()).getCategoryName());
         }
+
+        public void setIvCourseImage(String url, int drawable) {
+            Glide
+                    .with(mCategoryName)
+                    .load(url)
+                    .placeholder(drawable)
+                    .into(mCategoryImage);
+        }
+
     }
 }
