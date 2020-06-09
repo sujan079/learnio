@@ -24,6 +24,10 @@ public class CategoryCoursesAdapter extends RecyclerView.Adapter<CategoryCourses
         this.coursesArrayList = coursesArrayList;
     }
 
+    public ArrayList<Courses> getCoursesArrayList() {
+        return coursesArrayList;
+    }
+
     @NonNull
     @Override
     public CategoryCourseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -76,6 +80,7 @@ public class CategoryCoursesAdapter extends RecyclerView.Adapter<CategoryCourses
                     .with(ivCourseImage)
                     .load(url)
                     .placeholder(drawable)
+                    .placeholder(R.drawable.placeholder)
                     .into(ivCourseImage);
         }
 

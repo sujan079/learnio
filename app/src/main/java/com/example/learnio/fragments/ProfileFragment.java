@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,6 +26,7 @@ public class ProfileFragment extends Fragment {
     FirebaseAuth firebaseAuth;
     private Button signOutButton;
     private ImageView ivProfile;
+    private TextView tvName,tvEmail;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -49,6 +51,9 @@ public class ProfileFragment extends Fragment {
     public void init() {
         signOutButton = getView().findViewById(R.id.btn_logout);
         ivProfile = getView().findViewById(R.id.iv_profile);
+        tvEmail=getView().findViewById(R.id.tv_email);
+        tvName=getView().findViewById(R.id.tv_name);
+
 
         setIvProfile();
 
@@ -64,6 +69,8 @@ public class ProfileFragment extends Fragment {
     }
 
     public void setIvProfile() {
+        tvEmail.setText(firebaseAuth.getCurrentUser().getEmail());
+        tvName.setText(firebaseAuth.getCurrentUser().getDisplayName());
         Glide
                 .with(ivProfile)
                 .load(firebaseAuth.getCurrentUser().getPhotoUrl())

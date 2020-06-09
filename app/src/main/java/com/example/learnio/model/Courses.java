@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 
 public class Courses {
+    private int id;
     private String courseName;
     private String length;
     private int background;
@@ -17,6 +18,13 @@ public class Courses {
     private String course_url;
 
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getCourse_logo() {
         return course_logo;
@@ -29,6 +37,8 @@ public class Courses {
     private ArrayList<CourseContent> courseContents;
 
 
+    public Courses() {
+    }
 
     public Courses(String courseName, String length) {
         this.courseName = courseName;
@@ -50,6 +60,7 @@ public class Courses {
         this.background = background;
         this.category = category;
         this.course_url = course_url;
+        this.courseContents = new ArrayList<>();
     }
 
     public Courses(String courseName, String length, int background, String category, int course_logo) {
