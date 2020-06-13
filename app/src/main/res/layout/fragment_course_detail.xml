@@ -21,8 +21,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="140dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="100dp"
             android:fontFamily="sans-serif-medium"
             android:text="UI/UX Design"
             android:textColor="#fff"
@@ -121,8 +121,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-medium"
         android:text="Course Content"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000"
+        app:layout_constraintBottom_toTopOf="@+id/rv_course_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
 

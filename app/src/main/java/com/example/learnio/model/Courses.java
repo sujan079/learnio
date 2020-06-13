@@ -159,7 +159,7 @@ public class Courses {
             add(new Courses("Introduction to Graphic Design", "2 hrs", R.drawable.pink, "Coding",R.drawable.angularjs));
             add(new Courses("Game Development", "5 hr", R.drawable.green, "Photography",R.drawable.android));
             add(new Courses("Database", "12 hrs", R.drawable.black, "Coding",R.drawable.angularjs));
-            add(new Courses("Database", "12 hrs", R.drawable.black, "Coding","https://banner2.kisspng.com/20180717/jsr/kisspng-computer-icons-oracle-database-clip-art-db-logo-5b4d9ea94e9296.6349990715318135453218.jpg"));
+            add(new Courses("Database", "12 hrs", R.drawable.black, "Coding","https://png.pngtree.com/element_our/20190531/ourmid/pngtree-android-icon-image_1288986.jpg"));
 
         }};
     }

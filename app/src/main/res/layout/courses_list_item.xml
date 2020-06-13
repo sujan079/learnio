@@ -24,6 +24,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:text="TextView"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#000"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/iv_course_img"
         app:layout_constraintTop_toTopOf="@+id/iv_course_img" />
 
@@ -34,5 +38,6 @@
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="@+id/iv_course_img"
         app:layout_constraintStart_toStartOf="@+id/tv_course_name"
-        app:layout_constraintTop_toBottomOf="@+id/tv_course_name" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_course_name"
+        app:layout_constraintVertical_bias="0.375" />
 </androidx.constraintlayout.widget.ConstraintLayout>

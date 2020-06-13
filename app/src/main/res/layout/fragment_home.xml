@@ -130,6 +130,10 @@
             android:text="Recommended courses"
             android:textColor="#000"
             android:textSize="20sp"
+
+
+
+
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/rv_category" />
 
