@@ -2,17 +2,14 @@ package com.example.learnio.database;
 
 import android.content.Context;
 
-import androidx.annotation.NonNull;
 import androidx.room.Database;
-import androidx.room.Insert;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.learnio.model.Bookmark;
 import com.example.learnio.model.Enroll;
 
-@Database(entities = {Bookmark.class, Enroll.class},version = 1)
+@Database(entities = {Bookmark.class, Enroll.class}, version = 1, exportSchema = false)
 public abstract class LernioDatabase extends RoomDatabase {
 
     private static String DATABASE_NAME="Lernio_db";

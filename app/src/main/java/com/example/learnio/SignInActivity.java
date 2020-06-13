@@ -31,6 +31,8 @@ public class SignInActivity extends AppCompatActivity {
     private final Integer RC_SIGN_IN = 100;
     private GoogleSignInClient mGoogleSignInClient;
 
+    private TextView tvCreateAccountBtn;
+
     private EditText etUserEmail, etUserPassword;
     private Button mSignInBtn, mSignInWithGoogleBtn;
     private TextView tvErrorMsg;
@@ -51,7 +53,7 @@ public class SignInActivity extends AppCompatActivity {
         tvErrorMsg = findViewById(R.id.tv_error_msg);
         mSignInWithGoogleBtn = findViewById(R.id.btn_sign_in_google);
         mSignInBtn = findViewById(R.id.btn_sign_in);
-
+        tvCreateAccountBtn = findViewById(R.id.tv_create_it);
         etUserEmail = findViewById(R.id.etEmail);
         etUserPassword = findViewById(R.id.etPassword);
 
@@ -67,6 +69,14 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 signInWithGoogle();
+            }
+        });
+
+        mSignInBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent signUpIntent = new Intent(getApplicationContext(), SignUpActivity.class);
+                startActivity(signUpIntent);
             }
         });
     }
