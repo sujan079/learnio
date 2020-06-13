@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 
 public class CategoryCoursesFragment extends Fragment {
 
+    private TextView tvCourseCategory;
     private String category;
     private RecyclerView rvCategoryCourse;
     private CategoryCoursesAdapter categoryCoursesAdapter;
@@ -47,6 +49,8 @@ public class CategoryCoursesFragment extends Fragment {
     public void init() {
         rvCategoryCourse = getView().findViewById(R.id.rv_category_courses);
 
+        tvCourseCategory = getView().findViewById(R.id.tv_course_category);
+
         categoryCoursesAdapter = new CategoryCoursesAdapter();
         categoryLayoutManager = new LinearLayoutManager(getContext());
 
@@ -55,6 +59,8 @@ public class CategoryCoursesFragment extends Fragment {
         rvCategoryCourse.setAdapter(categoryCoursesAdapter);
         rvCategoryCourse.setLayoutManager(categoryLayoutManager);
         rvCategoryCourse.setHasFixedSize(true);
+
+        tvCourseCategory.setText(category+" Courses");
     }
 
     public ArrayList<Courses> getCourseCategory() {

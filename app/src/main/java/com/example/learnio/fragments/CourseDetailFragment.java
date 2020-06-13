@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -67,7 +68,7 @@ public class CourseDetailFragment extends Fragment {
         btnBookmark.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                makeToast("Added To Bookmark");
                 LernioDatabase.getINSTANCE(getActivity()).bookmarkDao().insert(new Bookmark(courses.getCourseName(), courses.getCourse_url(), courses.getLength()));
             }
         });
@@ -75,6 +76,8 @@ public class CourseDetailFragment extends Fragment {
         tvEnrollBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                makeToast("Added To Enroll");
+
                 LernioDatabase.getINSTANCE(getActivity()).enrollDao().insert(new Enroll(courses.getCourseName(), courses.getCourse_url(), courses.getLength()));
             }
         });
@@ -108,5 +111,8 @@ public class CourseDetailFragment extends Fragment {
 
     }
 
+    public void makeToast(String msg) {
+        Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
+    }
 
 }

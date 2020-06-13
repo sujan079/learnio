@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -76,6 +77,10 @@ public class BookmarkFragment extends Fragment {
         return courses;
     }
 
+    public void makeToast(String msg) {
+        Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
+    }
+
     ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT | ItemTouchHelper.DOWN | ItemTouchHelper.UP) {
 
         @Override
@@ -91,7 +96,7 @@ public class BookmarkFragment extends Fragment {
             Bookmark bookmark = new Bookmark(course.getCourseName(), course.getCourse_url(), course.getLength());
             bookmark.setId(course.getId());
             mDB.bookmarkDao().delete(bookmark);
-
+            makeToast("Bookmark Deleted");
             categoryCoursesAdapter.setCoursesArrayList(getCourses());
             categoryCoursesAdapter.notifyDataSetChanged();
 
