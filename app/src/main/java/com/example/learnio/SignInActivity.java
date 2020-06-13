@@ -72,7 +72,7 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
-        mSignInBtn.setOnClickListener(new View.OnClickListener() {
+        tvCreateAccountBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent signUpIntent = new Intent(getApplicationContext(), SignUpActivity.class);
