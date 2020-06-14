@@ -85,7 +85,7 @@
             android:ems="10"
             android:fontFamily="sans-serif-thin"
             android:hint="What topic are you searching for"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:paddingLeft="20dp"
             android:textColor="#BBBBBB"
             android:textSize="18sp"
