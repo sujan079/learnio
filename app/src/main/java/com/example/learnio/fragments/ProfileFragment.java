@@ -38,7 +38,7 @@ import java.util.List;
 public class ProfileFragment extends Fragment {
 
     FirebaseAuth firebaseAuth;
-    private Button signOutButton;
+    private ImageView signOutButton;
     private ImageView ivProfile;
     private TextView tvName, tvEmail, tvTotalEnroll, tvTotalBookmark;
     private Button btnSave;

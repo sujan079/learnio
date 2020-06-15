@@ -154,7 +154,8 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void updateUI() {
-
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        addUserToDatabase(new User(user.getUid(), user.getDisplayName(), user.getEmail(), user.getPhotoUrl().toString()));
         Intent activityIntent = new Intent(SignUpActivity.this, MainActivity.class);
         startActivity(activityIntent);
         finish();
