@@ -21,7 +21,14 @@ import com.example.learnio.adapter.CategoryAdapter;
 import com.example.learnio.adapter.CoursesAdapter;
 import com.example.learnio.model.Category;
 import com.example.learnio.model.Courses;
+import com.example.learnio.model.User;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 
 public class HomeFragment extends Fragment implements CoursesActionListner, CategoryActionListner {
@@ -32,8 +39,10 @@ public class HomeFragment extends Fragment implements CoursesActionListner, Cate
     private RecyclerView.LayoutManager categoryLayoutManger, coursesLayoutManager;
     private ImageView ivProfile;
 
-    FirebaseAuth firebaseAuth;
+    private FirebaseAuth firebaseAuth;
 
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private CollectionReference userRef = db.collection("USERS");
     public HomeFragment() {
     }
 
@@ -58,9 +67,26 @@ public class HomeFragment extends Fragment implements CoursesActionListner, Cate
         super.onActivityCreated(savedInstanceState);
         initCategory();
         initCourses();
-        setIvProfile();
+
+        getUser(firebaseAuth.getCurrentUser());
     }
 
+    public void getUser(FirebaseUser firebaseUser) {
+        userRef.document(firebaseUser.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    User db_user = documentSnapshot.toObject(User.class);
+                    setIvProfile(db_user);
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+            }
+        });
+    }
 
     public void initCategory() {
         rvCategory = getView().findViewById(R.id.rv_category);
@@ -90,11 +116,12 @@ public class HomeFragment extends Fragment implements CoursesActionListner, Cate
         rvCourses.setHasFixedSize(true);
     }
 
-    public void setIvProfile() {
+    public void setIvProfile(User user) {
+
         ivProfile = getView().findViewById(R.id.iv_profile);
         Glide
                 .with(ivProfile)
-                .load(firebaseAuth.getCurrentUser().getPhotoUrl())
+                .load(user.getImageUrl())
                 .placeholder(R.drawable.dummy)
                 .into(ivProfile);
     }

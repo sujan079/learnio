@@ -12,11 +12,14 @@ import com.example.learnio.fragments.CoursesFragment;
 import com.example.learnio.fragments.HomeFragment;
 import com.example.learnio.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.StorageReference;
 
 public class MainActivity extends AppCompatActivity {
 
 
     private BottomNavigationView bottomNavigationView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +28,11 @@ public class MainActivity extends AppCompatActivity {
 
         initBottomNavigation();
 
+
         if(savedInstanceState==null)
             setFragment(new HomeFragment());
     }
+
 
     public void initBottomNavigation() {
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
