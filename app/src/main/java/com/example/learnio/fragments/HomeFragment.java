@@ -65,6 +65,7 @@ public class HomeFragment extends Fragment implements CoursesActionListner, Cate
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
         initCategory();
         initCourses();
 
