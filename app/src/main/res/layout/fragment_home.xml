@@ -102,9 +102,9 @@
 
             android:layout_marginTop="32dp"
             android:fontFamily="sans-serif-medium"
-            android:text="Popular Categories"
             android:textColor="#000"
             android:textSize="20sp"
+            android:text="Popular Categories"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
